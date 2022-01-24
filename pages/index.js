@@ -1,6 +1,10 @@
+// IMPORTA OS COMPONENTES DA LIB SKYNEXUI
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
+
+// IMPORTA OS ESTILOS QUE ESTÃO NO ARQUIVO "config.json"
 import appConfig from '../config.json';
 
+// ESTILOS GLOBAIS DA APLICAÇÃO
 function GlobalStyle() {
     return (
       <style global jsx>{`
@@ -25,7 +29,6 @@ function GlobalStyle() {
         #__next > * {
           flex: 1;
         }
-        /* ./App fit Height */ 
       `}</style>
     );
   }
@@ -37,7 +40,7 @@ function GlobalStyle() {
         <Tag>{props.children}</Tag>
         <style jsx>{`
               ${Tag} {
-                  color: ${appConfig.theme.colors.neutrals['000']};
+                  color: ${appConfig.theme.colors.neutrals['100']};
                   font-size: 24px;
                   font-weight: 600;
               }
@@ -46,6 +49,8 @@ function GlobalStyle() {
     );
   }
   
+// COMPONENTE REACT PADRÃO
+
   // Componente React
   // function HomePage() {
   //     // JSX
@@ -59,7 +64,7 @@ function GlobalStyle() {
   // }
   // export default HomePage
   
-  export default function PaginaInicial() {
+  function PaginaInicial() {
     const username = 'peas';
   
     return (
@@ -69,7 +74,7 @@ function GlobalStyle() {
           styleSheet={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             backgroundColor: appConfig.theme.colors.primary[500],
-            backgroundImage: 'url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg)',
+            backgroundImage: 'url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80)',
             backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
           }}
         >
@@ -85,7 +90,7 @@ function GlobalStyle() {
               width: '100%', maxWidth: '700px',
               borderRadius: '5px', padding: '32px', margin: '16px',
               boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
-              backgroundColor: appConfig.theme.colors.neutrals[700],
+              backgroundColor: appConfig.theme.colors.neutrals[500],
             }}
           >
             {/* Formulário */}
@@ -97,7 +102,7 @@ function GlobalStyle() {
               }}
             >
               <Title tag="h2">Boas vindas de volta!</Title>
-              <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[300] }}>
+              <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[100] }}>
                 {appConfig.name}
               </Text>
   
@@ -105,10 +110,10 @@ function GlobalStyle() {
                 fullWidth
                 textFieldColors={{
                   neutral: {
-                    textColor: appConfig.theme.colors.neutrals[200],
-                    mainColor: appConfig.theme.colors.neutrals[900],
-                    mainColorHighlight: appConfig.theme.colors.primary[500],
-                    backgroundColor: appConfig.theme.colors.neutrals[800],
+                    textColor: appConfig.theme.colors.neutrals[900],
+                    mainColor: appConfig.theme.colors.neutrals[100],
+                    mainColorHighlight: appConfig.theme.colors.primary[100],
+                    backgroundColor: appConfig.theme.colors.neutrals[300],
                   },
                 }}
               />
@@ -117,10 +122,10 @@ function GlobalStyle() {
                 label='Entrar'
                 fullWidth
                 buttonColors={{
-                  contrastColor: appConfig.theme.colors.neutrals["000"],
-                  mainColor: appConfig.theme.colors.primary[500],
-                  mainColorLight: appConfig.theme.colors.primary[400],
-                  mainColorStrong: appConfig.theme.colors.primary[600],
+                  contrastColor: appConfig.theme.colors.neutrals["100"],
+                  mainColor: appConfig.theme.colors.primary[800],
+                  mainColorLight: appConfig.theme.colors.primary[100],
+                  mainColorStrong: appConfig.theme.colors.primary[700],
                 }}
               />
             </Box>
@@ -135,9 +140,9 @@ function GlobalStyle() {
                 alignItems: 'center',
                 maxWidth: '200px',
                 padding: '16px',
-                backgroundColor: appConfig.theme.colors.neutrals[800],
+                backgroundColor: appConfig.theme.colors.neutrals[300],
                 border: '1px solid',
-                borderColor: appConfig.theme.colors.neutrals[999],
+                borderColor: appConfig.theme.colors.neutrals[200],
                 borderRadius: '10px',
                 flex: 1,
                 minHeight: '240px',
@@ -153,8 +158,8 @@ function GlobalStyle() {
               <Text
                 variant="body4"
                 styleSheet={{
-                  color: appConfig.theme.colors.neutrals[200],
-                  backgroundColor: appConfig.theme.colors.neutrals[900],
+                  color: appConfig.theme.colors.neutrals[800],
+                  backgroundColor: appConfig.theme.colors.neutrals[100],
                   padding: '3px 10px',
                   borderRadius: '1000px'
                 }}
@@ -168,3 +173,5 @@ function GlobalStyle() {
       </>
     );
   }
+
+  export default PaginaInicial
