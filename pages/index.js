@@ -65,7 +65,7 @@ function GlobalStyle() {
   // export default HomePage
   
   function PaginaInicial() {
-    const username = 'peas';
+    const username = 'Naruto';
   
     return (
       <>
@@ -73,8 +73,8 @@ function GlobalStyle() {
         <Box
           styleSheet={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            backgroundColor: appConfig.theme.colors.primary[500],
-            backgroundImage: 'url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80)',
+            backgroundColor: appConfig.theme.colors.primary[100],
+            backgroundImage: 'url(https://spuckpop.com/wp-content/uploads/2020/12/spuckpop.png)',
             backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
           }}
         >
@@ -89,8 +89,11 @@ function GlobalStyle() {
               },
               width: '100%', maxWidth: '700px',
               borderRadius: '5px', padding: '32px', margin: '16px',
-              boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
-              backgroundColor: appConfig.theme.colors.neutrals[500],
+              background: 'rgba( 41, 51, 61, 0.83)',
+              boxShadow: '0 8px 32px 0 rgba( 31, 38, 135, 0.37 )',
+              backdropFilter: ( '4.5px' ),
+              borderRadius: '10px',
+              border: '1px solid rgba( 255, 255, 255, 0.18 )',
             }}
           >
             {/* Formulário */}
@@ -123,9 +126,9 @@ function GlobalStyle() {
                 fullWidth
                 buttonColors={{
                   contrastColor: appConfig.theme.colors.neutrals["100"],
-                  mainColor: appConfig.theme.colors.primary[800],
+                  mainColor: appConfig.theme.colors.primary[500],
                   mainColorLight: appConfig.theme.colors.primary[100],
-                  mainColorStrong: appConfig.theme.colors.primary[700],
+                  mainColorStrong: appConfig.theme.colors.primary[400],
                 }}
               />
             </Box>
@@ -140,7 +143,7 @@ function GlobalStyle() {
                 alignItems: 'center',
                 maxWidth: '200px',
                 padding: '16px',
-                backgroundColor: appConfig.theme.colors.neutrals[300],
+                backgroundColor: appConfig.theme.colors.primary[500],
                 border: '1px solid',
                 borderColor: appConfig.theme.colors.neutrals[200],
                 borderRadius: '10px',
@@ -153,7 +156,7 @@ function GlobalStyle() {
                   borderRadius: '50%',
                   marginBottom: '16px',
                 }}
-                src={`https://github.com/${username}.png`}
+                src={`https://i.pinimg.com/736x/89/f3/e6/89f3e629db7ea5010c3b2deaec8c7f6c.jpg`}
               />
               <Text
                 variant="body4"
