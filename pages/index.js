@@ -1,37 +1,10 @@
 // IMPORTA OS COMPONENTES DA LIB SKYNEXUI
 import { Box, Button, Text, TextField, Image } from '@skynexui/components';
+import React from 'react';
+import { useRouter } from 'next/router';
 
 // IMPORTA OS ESTILOS QUE ESTÃO NO ARQUIVO "config.json"
 import appConfig from '../config.json';
-
-// ESTILOS GLOBAIS DA APLICAÇÃO
-function GlobalStyle() {
-    return (
-      <style global jsx>{`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-          list-style: none;
-        }
-        body {
-          font-family: 'Open Sans', sans-serif;
-        }
-        /* App fit Height */ 
-        html, body, #__next {
-          min-height: 100vh;
-          display: flex;
-          flex: 1;
-        }
-        #__next {
-          flex: 1;
-        }
-        #__next > * {
-          flex: 1;
-        }
-      `}</style>
-    );
-  }
 
   function Title(props) {
     const Tag = props.tag || 'h1';
@@ -65,11 +38,13 @@ function GlobalStyle() {
   // export default HomePage
   
   function PaginaInicial() {
-    const username = 'Naruto';
-  
+    // const username = 'peas';
+    const [username, setUsername] = React.useState('DeyvidJesus')
+    const roteamento = useRouter()
+    const lenghtUser = username.length
+    
     return (
       <>
-        <GlobalStyle />
         <Box
           styleSheet={{
             display: 'flex', alignItems: 'center', justifyContent: 'center',
@@ -99,6 +74,10 @@ function GlobalStyle() {
             {/* Formulário */}
             <Box
               as="form"
+              onSubmit={function (event) {
+                event.preventDefault();
+                roteamento.push('/chat');
+              }}
               styleSheet={{
                 display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                 width: { xs: '100%', sm: '50%' }, textAlign: 'center', marginBottom: '32px',
@@ -108,8 +87,19 @@ function GlobalStyle() {
               <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[100] }}>
                 {appConfig.name}
               </Text>
+
+              <input 
+                fullWidth
+                type='text'
+                value={username} 
+                onChange={function (event) {
+                const valor = event.target.value
+                setUsername(valor)
+                }
+              }
+              />
   
-              <TextField
+              {/* <TextField
                 fullWidth
                 textFieldColors={{
                   neutral: {
@@ -119,7 +109,7 @@ function GlobalStyle() {
                     backgroundColor: appConfig.theme.colors.neutrals[300],
                   },
                 }}
-              />
+              /> */}
               <Button
                 type='submit'
                 label='Entrar'
@@ -156,7 +146,7 @@ function GlobalStyle() {
                   borderRadius: '50%',
                   marginBottom: '16px',
                 }}
-                src={`https://i.pinimg.com/736x/89/f3/e6/89f3e629db7ea5010c3b2deaec8c7f6c.jpg`}
+                src={`https://github.com/${username}.png`}
               />
               <Text
                 variant="body4"
