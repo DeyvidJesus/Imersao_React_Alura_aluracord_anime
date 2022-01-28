@@ -1,6 +1,6 @@
 function GlobalStyle() {
   return (
-      <style global jsx>{`
+    <style global jsx>{`
     * {
       margin: 0;
       padding: 0;
@@ -30,9 +30,9 @@ function GlobalStyle() {
 export default function CustomApp({ Component, pageProps }) {
   // console.log('Roda em todas as páginas!');
   return (
-      <>
-          <GlobalStyle />
-          <Component {...pageProps} />
-      </>
+    <>
+      <GlobalStyle />
+      <Component {...pageProps} />
+    </>
   );
 }
